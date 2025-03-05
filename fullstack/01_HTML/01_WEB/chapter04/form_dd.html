@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <fieldset>
+        <legend>코드마을 입주 신청서</legend>
+        <label>이름</label>
+        <input type="text" /><br />
+        <label>이메일</label>
+        <input type="email" /><br />
+        <label>비밀번호</label>
+        <input type="password" /><br />
+        <label>비밀번호 확인</label>
+        <input type="password" /><br />
+        <fieldset>
+          <legend>성별</legend>
+          <input id="man" type="radio" name="gender" value="m" />
+          <label for="man">남자</label>
+          <input id="woman" type="radio" name="gender" value="w" />
+          <label for="woman">여자</label>
+        </fieldset>
+        <fieldset>
+          <legend>사용 가능한 언어</legend>
+          <input id="html" name="lang" type="checkbox" value="HTML" />
+          <label for="html">HTML</label>
+          <input id="CSS" name="lang" type="checkbox" value="CSS" />
+          <label for="CSS">CSS</label>
+          <input
+            id="JavaScript"
+            name="lang"
+            type="checkbox"
+            value="JavaScript"
+          />
+          <label for="JavaScript">JavaScript</label>
+          <input id="Python" name="lang" type="checkbox" value="Python" />
+          <label for="Python">Python</label>
+        </fieldset>
+        <label>프로필 사진</label>
+        <input type="file" /><br />
+        <input type="submit" value="입주 신청" />
+        <input type="reset" value="초기화" />
+      </fieldset>
+    </form>
+  </body>
+</html>
