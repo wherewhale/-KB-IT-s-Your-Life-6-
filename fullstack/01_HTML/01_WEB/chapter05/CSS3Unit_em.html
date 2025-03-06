@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .parent {
+        /* em은 부모 폰트 크기의 배수이다. */
+        font-size: 50px;
+      }
+      p:nth-child(2) {
+        font-size: 1rem;
+      }
+      p:nth-child(3) {
+        font-size: 1.5rem;
+      }
+      p:nth-child(4) {
+        font-size: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    </div>
+  </body>
+</html>
