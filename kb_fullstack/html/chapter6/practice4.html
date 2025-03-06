@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .background {
+        background-color: burlywood;
+      }
+      .img-container {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        border-radius: 32px;
+        width: 600px;
+        margin: auto;
+        height: 280px;
+        background-image: url('https://health.chosun.com/site/data/img_dir/2023/05/31/2023053102582_0.jpg');
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        text-align: center;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+      }
+      .img-container > p {
+        position: absolute;
+        top: 40%;
+        font-size: large;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      .description {
+        text-align: center;
+        width: 100%;
+      }
+
+      .button-container {
+        display: flex;
+        justify-content: center;
+      }
+
+      button {
+        background-color: blue;
+        padding: 10px;
+        border-radius: 8px;
+        color: white;
+        border: solid 1px black;
+        font-weight: bold;
+        margin: auto;
+      }
+
+      button:hover {
+        background-color: cyan;
+        color: black;
+      }
+
+      button:active {
+        background-color: black;
+        color: white;
+      }
+    </style>
+  </head>
+  <body class="background">
+    <div class="img-container">
+      <p>Chill Chill 맞은 Guy의 여행지</p>
+    </div>
+    <p class="description">
+      Chill Guy는 오늘도 편안하게 해변에서 여유를 즐깁니다.
+    </p>
+    <div class="button-container">
+      <button>함께 떠나기</button>
+    </div>
+  </body>
+</html>

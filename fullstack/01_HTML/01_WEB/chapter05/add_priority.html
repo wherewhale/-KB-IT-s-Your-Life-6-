@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- !important > 인라인 > id > class > 태그 순으로 우선순위가 높음 -->
+    <!-- 중첩되면 합쳐지는 형식 -->
+    <!-- : -> 가상 클래스도 클래스 -->
+    <style>
+      /* important가 최고점수 */
+      div {
+        color: red !important;
+      }
+      /* 일반 선택자 - 1점 */
+      div {
+        color: violet;
+      }
+
+      /* id 선택자 - 100점 */
+      #yellow {
+        color: yellow;
+      }
+
+      /* 클래스 선택자 - 10점 */
+      .blue {
+        color: blue;
+      }
+
+      /* 전체 선택자 - 0점 */
+      * {
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 인라인 스타일 - 1000점 -->
+    <div id="yellow" class="blue" style="color: orange">안녕하세요.</div>
+  </body>
+</html>
