@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Layout</title>
+    <style>
+      body {
+        width: 500px;
+        margin: 10px auto;
+      }
+      #middle {
+        /* 수평정렬, 부모요소에 넣어줘야한다. */
+        display: flex;
+      }
+      #left {
+        width: 150px;
+        background: red;
+      }
+      #right {
+        width: 350px;
+        background: blue;
+      }
+      #top {
+        background: green;
+      }
+      #bottom {
+        background: purple;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="top">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius, odio
+      soluta! Dolore quidem deleniti eaque facere earum, est molestiae soluta
+      voluptate, laborum quas provident, quia quis accusantium eligendi
+      repellendus aut.
+    </div>
+    <div id="middle">
+      <div id="left">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis
+        blanditiis
+      </div>
+      <div id="right">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione
+        consequuntur unde, nostrum officia eveniet, nihil, architecto cum eos
+        modi nisi dolorem sunt. Laborum ratione ea exercitationem perferendis,
+        dolores dolore enim.
+      </div>
+    </div>
+    <div id="bottom">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt,
+      dignissimos non! Iure laboriosam minima inventore tempora blanditiis
+      laborum repellat dicta, at est harum hic asperiores aspernatur ad mollitia
+      saepe. Ipsam?
+    </div>
+  </body>
+</html>
