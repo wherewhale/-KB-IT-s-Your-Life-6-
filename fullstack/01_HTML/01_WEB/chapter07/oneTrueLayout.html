@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        width: 500px;
+        margin: 10px auto;
+      }
+      #middle {
+        /* one True 레이아웃에서는 반드시 행 단위에 overflow hidden을 처리해주어야 한다. -> 안그러면 요상해진다. */
+        overflow: hidden;
+      }
+      #left {
+        float: left;
+        width: 150px;
+        background: red;
+      }
+      #right {
+        float: right;
+        width: 350px;
+        background: blue;
+      }
+      #top {
+        background: green;
+      }
+      #bottom {
+        background: purple;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="top">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius, odio
+      soluta! Dolore quidem deleniti eaque facere earum, est molestiae soluta
+      voluptate, laborum quas provident, quia quis accusantium eligendi
+      repellendus aut.
+    </div>
+    <div id="middle">
+      <div id="left">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis
+        blanditiis
+      </div>
+      <div id="right">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione
+        consequuntur unde, nostrum officia eveniet, nihil, architecto cum eos
+        modi nisi dolorem sunt. Laborum ratione ea exercitationem perferendis,
+        dolores dolore enim.
+      </div>
+    </div>
+    <div id="bottom">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt,
+      dignissimos non! Iure laboriosam minima inventore tempora blanditiis
+      laborum repellat dicta, at est harum hic asperiores aspernatur ad mollitia
+      saepe. Ipsam?
+    </div>
+  </body>
+</html>
