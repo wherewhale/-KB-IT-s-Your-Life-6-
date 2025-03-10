@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function eat() {
+        console.log('냠냠');
+      }
+
+      let person = {
+        name: '윤인성',
+        eat: function (food) {
+          console.log(this.name + '이 ' + food + '을/를 먹습니다.');
+        },
+      };
+      person.eat('밥');
+
+      person.eat();
+    </script>
+  </head>
+  <body></body>
+</html>
