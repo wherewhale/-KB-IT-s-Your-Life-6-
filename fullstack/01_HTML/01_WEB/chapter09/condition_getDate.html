@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let date = new Date();
+      let year = date.getFullYear();
+      let month = date.getMonth() + 1; // 0 ~ 11로 반환되기 때문에, 1을 더해주어야 좋다.
+      let hours = date.getHours();
+
+      if (hours < 12) {
+        alert('오전입니다.');
+      } else {
+        alert('오후입니다.');
+      }
+    </script>
+  </head>
+  <body></body>
+</html>
