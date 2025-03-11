@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      window.onload = function () {
+        let ramen = document.getElementById('rm');
+        let mandoo = document.getElementById('md');
+        let bulgogi = document.getElementById('bgg');
+        const button = document.getElementById('btn');
+
+        button.addEventListener(
+          'click',
+          function (e) {
+            e.preventDefault();
+            if (ramen.checked === true) {
+              console.log('라면');
+            }
+            if (mandoo.checked === true) {
+              console.log('만두');
+            }
+            if (bulgogi.checked === true) {
+              console.log('불고기');
+            }
+
+            return false;
+          },
+          false
+        );
+      };
+    </script>
+  </head>
+  <body>
+    <form>
+      <p>좋아하는 음식은?</p>
+      <label for="rm">라면</label>
+      <input type="checkbox" name="rm" id="rm" />
+      <label for="md">만두</label>
+      <input type="checkbox" name="md" id="md" />
+      <label for="bgg">불고기</label>
+      <input type="checkbox" name="bgg" id="bgg" />
+      <input id="btn" type="button" value="전송" />
+    </form>
+  </body>
+</html>

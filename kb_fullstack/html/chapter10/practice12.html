@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      window.onload = function () {
+        const investAmount = document.getElementById('investAmount');
+        const riskMessage = document.getElementById('riskMessage');
+
+        investAmount.addEventListener('change', (event) => {
+          if (Number(event.target.value) > 10000000) {
+            riskMessage.textContent = '고위험 투자';
+          } else {
+            riskMessage.textContent = '저위험 투자';
+          }
+        });
+      };
+    </script>
+  </head>
+  <body>
+    <input type="number" id="investAmount" placeholder="투자 금액 입력" />
+    <p id="riskMessage"></p>
+  </body>
+</html>
