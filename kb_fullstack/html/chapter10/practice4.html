@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      window.onload = function () {
+        const amount = document.getElementById('amount');
+        const result = document.getElementById('resultMessage');
+        const button = document.querySelector('button');
+        const remainingBalance = document.getElementById('remainingBalance');
+        let account = 100000;
+
+        document
+          .getElementById('transferForm')
+          .addEventListener('submit', function (event) {
+            event.preventDefault(); // 폼 제출 시 페이지 전환을 막음
+          });
+
+        const verify = () => {
+          if (isNaN(Number(amount.value))) {
+            result.textContent = '유효한 금액을 입력하세요.';
+            return false;
+          }
+          if (Number(amount.value) > account) {
+            result.textContent = '잔액이 부족합니다.';
+            return false;
+          }
+          return true;
+        };
+
+        const sendMoney = () => {
+          if (verify() === true) {
+            account -= Number(amount.value);
+            result.textContent = `${Number(
+              amount.value
+            ).toLocaleString()}원 이체 완료!`;
+            remainingBalance.textContent = `남은 잔액: ${account.toLocaleString()}원`;
+          }
+        };
+
+        button.addEventListener('click', sendMoney);
+      };
+    </script>
+  </head>
+  <body>
+    <form id="transferForm">
+      <input type="text" id="amount" placeholder="이체 금액 입력" />
+      <button type="submit">이체하기</button>
+    </form>
+    <p id="resultMessage"></p>
+    <p id="remainingBalance">남은 잔액: 100,000원</p>
+  </body>
+</html>

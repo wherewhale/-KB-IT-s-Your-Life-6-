@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // addTransaction을 전역 범위로 옮깁니다.
+      function addTransaction(amount) {
+        const transactionHistory =
+          document.getElementById('transactionHistory');
+        const date = new Date();
+        let ampm = '';
+
+        if (date.getHours() > 12) {
+          ampm = '오후';
+        } else {
+          ampm = '오전';
+        }
+
+        transactionHistory.innerHTML =
+          `<li>${amount.toLocaleString()}원 이체 완료 - ${date.getFullYear()}. ${
+            date.getMonth() + 1
+          }. ${date.getDate()}. ${ampm} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}</li>` +
+          transactionHistory.innerHTML;
+      }
+
+      window.onload = function () {
+        // window.onload 내에서 추가적인 초기화 작업을 할 수 있습니다.
+      };
+    </script>
+  </head>
+  <body>
+    <ul id="transactionHistory"></ul>
+
+    <button onclick="addTransaction(100000)">100,000원 이체</button>
+    <button onclick="addTransaction(50000)">50,000원 이체</button>
+  </body>
+</html>

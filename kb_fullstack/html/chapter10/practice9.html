@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      window.onload = function () {
+        const krwInput = document.getElementById('krwInput');
+        const usdResult = document.getElementById('usdResult');
+
+        const calcDollar = () => {
+          usdResult.textContent = `달러(USD): ${(
+            Number(krwInput.value) / 1300
+          ).toFixed(2)}`;
+        };
+
+        krwInput.addEventListener('change', () => calcDollar());
+        krwInput.addEventListener('keydown', () => calcDollar());
+      };
+    </script>
+  </head>
+  <body>
+    <input type="number" id="krwInput" placeholder="원화 입력" />
+    <p id="usdResult">달러(USD):</p>
+  </body>
+</html>
