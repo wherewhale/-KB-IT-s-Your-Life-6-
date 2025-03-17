@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <h2>{{message}}</h2>
+    </div>
+    <!-- CDN을 통해서 Vue 프레임워크를 가져온다. -->
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      let model = {
+        message: 'Hello Vue3!',
+      };
+      //   좁은 의미에서 ViewModel 이라고 볼 수도 있다.
+      //  여기서 Vue.createApp -> 이걸 설정 객체라고 한다.
+      let vm = Vue.createApp({
+        name: 'App',
+        // 제일 중요한 부분은 data로, 실질적인 데이터를 관리한다. -> 이걸 통해서 HTML 코드에 직접 반영할 수 있다.
+        data() {
+          // 여기서 확인해보면 model 객체를 그대로 리턴한다. -> 특이한 점은 model.message가 아니라, 프로퍼티를 그대로 사용할 수 있다는 점이다.
+          // Moditor 객체는 모두를 감시하지 않고, 실질적인 데이터인 Model만을 감시한다.
+          return model;
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>
