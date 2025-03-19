@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue.js Framework</title>
+  </head>
+  <body>
+    <div id="app">
+      사랑지수: <input type="text" v-model="love" /> <br /><br />당신의 등급:
+      <span v-if="love >= 1000">와~ 서래마을 최수종~</span>
+      <span v-else-if="love >= 500">와~ 잠실 션~</span>
+      <span v-else-if="love >= 200">와 사랑꾼~</span>
+      <span v-else>사랑은 하니?</span>
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      let vm = Vue.createApp({
+        name: 'App',
+        data() {
+          return {
+            love: 0,
+          };
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue.js Framework</title>
+  </head>
+  <body>
+    <div id="app">
+      <label>
+        고백할 준비 됐나요?
+        <input type="checkbox" v-model="agree" />
+      </label>
+
+      <div v-if="agree===true">💌고백할 준비 완료!💌</div>
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      let vm = Vue.createApp({
+        name: 'App',
+        data() {
+          return {
+            agree: false,
+          };
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>
