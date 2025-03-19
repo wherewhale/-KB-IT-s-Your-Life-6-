@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue.js Framework</title>
+  </head>
+  <body>
+    <div id="app">
+      <input
+        type="text"
+        placeholder="이름입력"
+        :value="name"
+        @input="changeName"
+        required
+      /><br />
+      <textarea
+        type="text"
+        placeholder="편지 내용"
+        :value="content"
+        @input="changeContent"
+        rows="4"
+        cols="40"
+        required
+      ></textarea>
+      <h2>마음 속 이유 (2개 이상 선택하세요.):</h2>
+      <div v-for="r in reasons" :key="r">
+        <label style="margin-right: 20px">
+          {{r}}
+          <input type="checkbox" :value="r" v-model="selected" />
+        </label>
+      </div>
+
+      <br />
+      <br />
+      <label>
+        시간 :
+        <input type="text" v-model="time" />
+      </label>
+      <!-- 분기 처리 -->
+      <div
+        v-if="name !== '' && content.length >= 200 && selected.length >= 2 && time <= 18"
+      >
+        <br />
+        <br />
+        <button @click="submitForm">GoBack 결심하기</button>
+      </div>
+      <div v-else>
+        <div v-if="name === ''" style="color: red; margin-top: 20px">
+          ⚠️ 이름을 입력하세요.
+        </div>
+        <div v-if="contentLen < 200" style="color: red; margin-top: 20px">
+          ⚠️ 편지 내용을 200자 이상 작성해주세요. (현재 {{contentLen}}자)
+        </div>
+        <div v-if="selected.length < 2" style="color: red; margin-top: 20px">
+          ⚠️ {{reasons.slice(1, 4).join(', ')}} 중 최소 2개를 선택해주세요.
+        </div>
+        <div v-if="time > 18" style="color: red; margin-top: 20px">
+          ⚠️ 현재 시간이 너무 늦었어요! (마감: 18시)
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      let vm = Vue.createApp({
+        name: 'App',
+        data() {
+          return {
+            name: '',
+            content: '',
+            contentLen: 0,
+            selected: [],
+            reasons: [
+              '유머 감각',
+              '신뢰',
+              '배려',
+              '따뜻함',
+              '함께 있으면 편안함',
+            ],
+            time: 0,
+          };
+        },
+        methods: {
+          changeName(e) {
+            this.name = e.target.value;
+          },
+          changeContent(e) {
+            this.content = e.target.value;
+            this.contentLen = e.target.value.length;
+          },
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>

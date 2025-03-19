@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue.js Framework</title>
+  </head>
+  <body>
+    <div id="app">
+      <input type="text" :value="name" @input="changeName" />
+      <br />
+      이름: <span>{{name}}</span>
+    </div>
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      let vm = Vue.createApp({
+        name: 'App',
+        data() {
+          return { name: '' };
+        },
+        methods: {
+          changeName(e) {
+            // this -> vm을 의미한다.
+            // e.target => 이벤트가 발생한 객체를 의미한다.
+            this.name = e.target.value;
+            console.log(this);
+          },
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>

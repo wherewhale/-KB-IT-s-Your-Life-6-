@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue.js Framework</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- v- 모시기가 붙어있으면 vm 내에서 찾는데, 데이터 관련은 data 내부를 확인하는거다. -->
+      <!-- v-model : 데이터 -> 화면, 화면 -> 데이터 양방향 바인딩 가능 -->
+      <!-- 보통 사용자가 입력하는 form 요소에 사용 -->
+      <input type="text" v-model="name" />
+      <br />
+      입력한 값: <span>{{name}}</span>
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      let vm = Vue.createApp({
+        name: 'App',
+        data() {
+          return { name: '' };
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>

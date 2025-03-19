@@ -1,0 +1,47 @@
+<!-- 시간이 17 이상이면 마감 임박! 
+ 아래 항목 중 마지막으로 남은 준비: 와 함께 배열에서 마지막 항목(마지막 index의 항목)을 
+ splice()로 꺼내서 보여주세요. -->
+
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue.js Framework</title>
+  </head>
+  <body>
+    <div id="app">
+      <input type="number" v-model="num" />
+      <div v-if="num < 17">
+        <p>아직 준비할 항목</p>
+        <ul v-for="todo in todoList">
+          <li>{{ todo }}</li>
+        </ul>
+      </div>
+      <div v-else>
+        <p>
+          마감 임박! 아래 항목 중 마지막으로 남은 준비:
+          <span>{{lastTodo}}</span>
+        </p>
+      </div>
+    </div>
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      let vm = Vue.createApp({
+        name: 'App',
+        data() {
+          return {
+            num: 0,
+            todoList: ['편지 작성', '편지 검토', '봉투 밀봉', '스탬프 찍기'],
+            lastTodo: [
+              '편지 작성',
+              '편지 검토',
+              '봉투 밀봉',
+              '스탬프 찍기',
+            ].splice(-1, 1)[0],
+          };
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>
