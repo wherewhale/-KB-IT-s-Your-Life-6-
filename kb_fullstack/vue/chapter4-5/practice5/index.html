@@ -1,0 +1,51 @@
+<!-- 시작 시 created() 에서 ":교차된_검: 마법 결투 준비 완료!" 를 콘솔에 출력
+화면에 큰 #duel-area 박스를 만들고, 안에 #player 박스(나), #opponent 박스(상대)를 배치합니다.
+#player 박스를 클릭하면 ":마술_지팡이: 내가 공격!" 콘솔 출력
+#opponent 박스를 클릭하면 ":쾅: 상대가 반격!" 콘솔 출력
+@click.stop 를 적절히 사용해서 클릭 시 이벤트 버블링 확인
+클릭 횟수를 각각 count하여 표시,computed로 현재 전황 요약(내 공격 횟수 & 상대 반격 횟수)을 표시
+watch를 사용하여 내 공격 횟수가 5번이 되는 순간 콘솔에 ":짠: 승리!" 출력
+DOM 마운트가 완료된 후 mounted() 에서 ":방패: 결투장이 열렸습니다." 콘솔 출력 -->
+
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue.js Framework</title>
+    <link rel="stylesheet" href="./p5.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div id="duel-area" @click="console.log('버블링~')">
+        <div id="player" @click="attack++">내 마법사(클릭!!!)</div>
+        <div id="opponent" @click.stop="defense++">상대 마법사(클릭!!!)</div>
+      </div>
+      <p>현재 전황 : 내 공격 {{attack}}회 / 상대 반격 {{defense}}회</p>
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      let vm = Vue.createApp({
+        name: 'App',
+        data() {
+          return {
+            attack: 0,
+            defense: 0,
+          };
+        },
+        watch: {
+          attack(newVal) {
+            console.log('내가 공격!');
+            if (newVal === 5) {
+              console.log('빰빠밤~ 승리!');
+            }
+          },
+          defense() {
+            console.log('상대가 반격!');
+          },
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>

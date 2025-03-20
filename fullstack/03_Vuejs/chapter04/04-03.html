@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue.js Framework</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- v-model은 양방향, .number는 숫자만 처리하도록 하는 특수 속성 -->
+      1보다 큰 수: <input type="text" v-model.number="num" />
+      <br />
+      <!-- HTML만 확인했을 때에는 sum은 데이터인지 함수인지 알 수 없음 -->
+      1부터 입력한 값까지의 합: <span>{{sum}}</span><br />
+      <!-- 맨 처음 실행될 때 캐싱 -->
+      1부터 입력한 값까지의 합: <span>{{sum}}</span><br />
+      <!-- 이후에는 캐싱된 값을 가져다가 사용 -->
+      1부터 입력한 값까지의 합: <span>{{sum}}</span><br />
+    </div>
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      let vm = Vue.createApp({
+        name: 'App',
+        data() {
+          // num 데이터는 0으로 초기화
+          return { num: 0 };
+        },
+        // computed는 객체로 정의
+        computed: {
+          // 내부는 함수로 정의 (함수명 = 속성명)
+          // computed 메서드 내에서 this를 사용하면 해당 인스턴스가 된다.
+          sum() {
+            // 여기서 this는 computed인 것처럼 보인다. 하지만, create App에서 가공이 되어 Vue Model인 vm이 된다.
+            // Proxy 객체인 this에 변화가 생기는 시점에 sum이 다시 호출된다.
+            console.log('## num: ' + this.num); // 따라서 여기서 this는 data의 num이 된다.
+            let n = parseInt(this.num);
+            if (Number.isNaN(n)) return 0;
+            return (n * (n + 1)) / 2;
+          },
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>

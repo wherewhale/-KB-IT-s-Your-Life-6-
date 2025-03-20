@@ -1,0 +1,74 @@
+<!-- 이름은 2글자 이상이어야 하고, 숫자가 포함되지 않아야 합니다.
+나이는 11세 이상 18세 이하만 입학 가능합니다.
+입력이 완료되면 입학 승인 버튼을 누르세요.
+조건에 맞으면 “:짠: [이름], [나이]세, 호그와트 입학을 축하합니다!” 출력.
+조건에 맞지 않으면, 어떤 조건이 틀렸는지 차례대로 안내하세요. -->
+
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue.js Framework</title>
+  </head>
+  <body>
+    <div id="app">
+      <form @submit.prevent="checkForm">
+        <label>
+          📚 이름: <input type="text" :value="name" @input="changeName" />
+        </label>
+        <label> 📚 나이: <input type="text" v-model.number="age" /></label>
+        <button type="submit">입학 승인</button>
+        <p v-if="errorCode !== null">{{ getErrorMessage }}</p>
+        <p v-if="isSuccess === true">
+          {{name}}, {{age}}세, 호그와트 입학을 축하합니다!
+        </p>
+      </form>
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      let vm = Vue.createApp({
+        name: 'App',
+        data() {
+          return {
+            name: '',
+            age: 0,
+            errorCode: null,
+            isSuccess: false,
+          };
+        },
+        methods: {
+          checkForm() {
+            this.isSuccess = false;
+            if (this.name.length < 2) {
+              this.errorCode = 0;
+            } else if (/[0-9]/.test(this.name)) {
+              this.errorCode = 1;
+            } else if (Number(this.age) < 11 || Number(this.age) > 18) {
+              this.errorCode = 2;
+            } else {
+              this.errorCode = null;
+              this.isSuccess = true;
+            }
+          },
+          changeName(e) {
+            this.name = e.target.value;
+          },
+        },
+        computed: {
+          getErrorMessage() {
+            if (this.errorCode === 0) {
+              return '이름은 2글자 이상이어야 합니다.';
+            } else if (this.errorCode === 1) {
+              return '이름은 숫자를 포함하지 않아야 합니다.';
+            } else if (this.errorCode === 2) {
+              return '입학 가능한 나이는 11세 이상 18세 이하입니다.';
+            }
+            return null;
+          },
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>

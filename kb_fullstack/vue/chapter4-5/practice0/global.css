@@ -1,0 +1,19 @@
+.sorting {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+label {
+  display: block;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+}
+th,
+td {
+  padding: 0.5rem;
+  border-bottom: 1px solid lightgrey;
+  text-align: start;
+}
