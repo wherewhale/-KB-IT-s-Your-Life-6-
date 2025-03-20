@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue.js Framework</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- @은 이벤트 v-on의 축약이며, input 이벤트가 있을 때마다 핸들러 메서드가 실행된다. -->
+      <!-- 이때, 핸들러 메서드를 사용하면서, 아무런 파라미터를 넘기지 않으면 이벤트 객체가 넘어간다. -->
+      <!-- 만약 event 객체가 아닌, 다른 값을 넘겨야 하는 상황이라면 임의의 매개변수를 사용할 수 있다. -->
+      <input type="text" :value="name" @input="changeName" />
+      <br />
+      이름: <span>{{name}}</span>
+    </div>
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      let vm = Vue.createApp({
+        name: 'App',
+        data() {
+          return { name: '' };
+        },
+        methods: {
+          changeName(e) {
+            this.name = e.target.value;
+            console.log(this);
+          },
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>

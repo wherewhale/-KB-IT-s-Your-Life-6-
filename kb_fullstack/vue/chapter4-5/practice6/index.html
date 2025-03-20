@@ -1,0 +1,83 @@
+<!-- 각 점수는 0~100 사이의 값이어야 합니다.
+세 과목 점수를 입력한 후 평가하기 버튼을 누르면
+평균 점수를 computed로 계산
+평균이 90점 이상: ":스포츠_메달: 최우수 합격!"
+평균이 70점 이상 90점 미만: ":흰색_확인_표시: 합격"
+평균이 70점 미만: ":x: 불합격"
+watch를 사용해 각 점수가 100을 초과하거나 음수이면 즉시 경고창 출력 -->
+
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue.js Framework</title>
+    <link rel="stylesheet" href="./p6.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div class="input-container">
+        <label> 마법이론: <input type="text" v-model.number="mabub" /></label>
+        <label> 주문실습: <input type="text" v-model.number="jumun" /></label>
+        <label> 비행수업: <input type="text" v-model.number="behang" /></label>
+      </div>
+      <button @click="average">평가하기</button>
+      <br />
+      <p>{{result}}</p>
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      let vm = Vue.createApp({
+        name: 'App',
+        data() {
+          return {
+            mabub: 0,
+            jumun: 0,
+            behang: 0,
+            result: '',
+          };
+        },
+        computed: {
+          average() {
+            const sum = this.mabub + this.jumun + this.behang;
+            const avg = sum / 3;
+
+            if (this.mabub !== 0 && this.behang !== 0 && this.behang !== 0) {
+              if (avg >= 90) {
+                this.result = `최우수 합격! (평균 : ${parseInt(avg)}점)`;
+              } else if (avg >= 70) {
+                this.result = `합격 (평균 : ${parseInt(avg)}점)`;
+              } else {
+                this.result = `불합격 (평균 : ${parseInt(avg)}점)`;
+              }
+            }
+          },
+        },
+        watch: {
+          mabub(value) {
+            this.isCalculated = false;
+            if (value > 100 || value < 0) {
+              alert('마법이론 점수는 0~100 사이의 값이어야합니다.');
+              this.mabub = 0;
+            }
+          },
+          jumun(value) {
+            this.isCalculated = false;
+            if (value > 100 || value < 0) {
+              alert('주문실습 점수는 0~100 사이의 값이어야합니다.');
+              this.jumun = 0;
+            }
+          },
+          behang(value) {
+            this.isCalculated = false;
+            if (value > 100 || value < 0) {
+              alert('비행수업 점수는 0~100 사이의 값이어야합니다.');
+              this.behang = 0;
+            }
+          },
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>

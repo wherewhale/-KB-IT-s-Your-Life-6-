@@ -1,0 +1,103 @@
+<!-- 이름 입력 시 watch로 실시간 감시하며, 조건은 차례대로 
+ 이름의 첫 글자가 모음이면 '그리핀도르', 
+ 이름의 길이가 5자 이상이면 '래번클로', 
+ 이름 마지막 글자가 n 또는 ㄴ이면 '후플푸프', 
+ 그 외는 '슬리데린'으로 분류합니다.
+
+조건의 겹칠 경우 앞의 조건으로 처리!
+출생 연도를 입력하면 나이를 자동 계산하고, 11세 미만이거나 19세 이상이면⚠ 입학 대상 연령이 아닙니다. 라는 메시지를 출력합니다.
+computed로 최종 배정 결과 메시지를 반환합니다.
+조건에 부적합할 때는 ‘조건을 충족해주세요!’ 출력, 모든 조건이 충족되면 “:유럽의_성: [이름] 님은 [기숙사]에 배정되었습니다. (나이: [나이]세)” 출력. -->
+
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue.js Framework</title>
+  </head>
+  <body>
+    <div id="app">
+      <label>
+        📚 이름:
+        <input type="text" v-model="name" /> </label
+      ><br />
+      <label>
+        📚 입학년도: <input type="number" v-model.number="birthYear"
+      /></label>
+      <br />
+      <p>{{getResult}}</p>
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      let vm = Vue.createApp({
+        name: 'App',
+        data() {
+          return {
+            name: '',
+            birthYear: null,
+            isAge: false,
+            isName: false,
+            domitory: null,
+            result: '',
+          };
+        },
+        computed: {
+          getResult() {
+            if (this.isAge && this.isName) {
+              return (
+                this.name +
+                '님은 ' +
+                this.domitory +
+                '에 배정되었습니다. (나이: ' +
+                (2025 - this.birthYear) +
+                '세)'
+              );
+            } else if (!this.isAge && this.isName) {
+              return '⚠ 입학 대상 연령이 아닙니다.';
+            } else {
+              return '⚠ 조건을 충족해주세요!';
+            }
+          },
+        },
+        watch: {
+          birthYear() {
+            if (this.birthYear < 2015 && this.birthYear > 2005) {
+              this.isAge = true;
+            } else {
+              this.isAge = false;
+            }
+            console.log(this.isAge);
+          },
+          name() {
+            if (this.name.length === 0 || this.name === null) {
+              this.isName = false;
+            } else {
+              this.isName = true;
+              const firstWord = this.name.charAt(0);
+              if (
+                firstWord === 'a' ||
+                firstWord === 'e' ||
+                firstWord === 'i' ||
+                firstWord === 'o' ||
+                firstWord === 'u'
+              ) {
+                this.domitory = '그리핀도르';
+              } else if (this.name.length > 4) {
+                this.domitory = '레번클로';
+              } else if (
+                this.name.charAt(-1) === 'n' ||
+                this.name.charAt(-1) === 's'
+              ) {
+                this.domitory = '후플푸프';
+              } else {
+                this.domitory = '슬리데린';
+              }
+            }
+          },
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>

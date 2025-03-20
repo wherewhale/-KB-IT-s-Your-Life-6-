@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue.js Framework</title>
+    <link rel="stylesheet" href="./global.css" />
+  </head>
+  <body>
+    <div id="app">
+      <h2>사용자 목록</h2>
+      <div class="sorting">
+        <label v-for="sorting in sortingType" :key="sorting">
+          <input
+            type="radio"
+            :value="sorting"
+            v-model="selectedSorting"
+            name="sorting"
+          />
+          {{ sorting }}
+        </label>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Username</th>
+            <th>Phone</th>
+            <th>Company</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="user in sortedUsers" :key="user.id">
+            <td>{{ user.id }}</td>
+            <td>{{ user.name }}</td>
+            <td>{{ user.username }}</td>
+            <td>{{ user.phone }}</td>
+            <td>{{ user.company.name }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script type="module">
+      import { users } from './data.js';
+
+      const sortingType = ['id', 'name', 'username', 'phone'];
+
+      let vm = Vue.createApp({
+        name: 'App',
+        data() {
+          return {
+            users,
+            sortingType,
+            selectedSorting: 'id',
+          };
+        },
+        computed: {
+          sortedUsers() {
+            return [...this.users].sort((a, b) => {
+              if (this.selectedSorting === 'id') {
+                return Number(a.id) - Number(b.id);
+              } else {
+                return a[this.selectedSorting] > b[this.selectedSorting]
+                  ? 1
+                  : -1;
+              }
+            });
+          },
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>

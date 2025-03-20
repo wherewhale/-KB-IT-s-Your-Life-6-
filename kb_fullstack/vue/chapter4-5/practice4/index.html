@@ -1,0 +1,62 @@
+<!-- 입력된 주문이 빈칸이거나 3글자 미만이면 “:경고: 올바른 주문을 입력하세요!” 출력
+올바른 주문이면, 🪄 [주문 내용] 발사! 라고 출력
+같은 주문을 반복 입력하면 “:경고: 이미 발사한 주문입니다! 새로운 주문을 입력하세요.” 출력
+마법 발사 횟수를 카운트해서 마지막에 (지금까지 [카운트]회 발사함) 출력
+Enter 키로 입력할 때마다 실행되며, @keyup.enter 와 computed 사용 권장 -->
+
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue.js Framework</title>
+  </head>
+  <body>
+    <div id="app">
+      <label>
+        마법주문 : <input type="text" @keyup.enter="onSubmitMagic" />
+      </label>
+      <p>{{result}}</p>
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      let vm = Vue.createApp({
+        name: 'App',
+        data() {
+          return {
+            magics: [],
+            result: '',
+          };
+        },
+        methods: {
+          onSubmitMagic(e) {
+            const magicOrder = e.target.value;
+            if (!magicOrder || magicOrder.length < 3) {
+              this.result = '경고! 올바른 주문을 입력하세요!';
+              return;
+            }
+            if (this.magics[this.magics.length - 1] === magicOrder) {
+              this.result =
+                '경고! 이미 발사한 주문입니다! 새로운 주문을 입력하세요.';
+              return;
+            }
+            this.result = `[${magicOrder}] 발사!`;
+
+            if (this.magics.includes(magicOrder)) {
+              let count = 1;
+              this.magics.forEach((magic) => {
+                if (magic === magicOrder) {
+                  count += 1;
+                }
+              });
+              this.result += `(지금까지 ${count}회 발사함)`;
+            }
+
+            this.magics.push(magicOrder);
+          },
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>
