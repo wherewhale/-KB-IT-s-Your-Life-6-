@@ -1,0 +1,119 @@
+<!-- created() 시
+"📚 도서관 관리 시스템 가동!" 로그 출력
+mounted() 시
+"✅ 도서관 준비 완료!" 로그 출력
+마법사 이름을 입력하고 출입 기록 추가 버튼을 누르면:
+출입 카운트는 항상 증가합니다.
+단, 현재 도서관에 이미 출입 중인 마법사는 중복 추가되지 않고 경고만 출력됩니다.
+도서관 인원이 포화 상태(5명 이상)일 경우 추가 출입이 차단되고 경고 출력됩니다.
+출입 목록은 화면에 v-for로 표시됩니다.
+
+:오른쪽을_가리키는_손_모양: 최근에 입장한 마법사가 위에 표시되도록 역순으로 렌더링합니다.
+watch를 사용하여:
+출입 인원이 처음 5명 이상이 되는 순간 콘솔에"⚠ 현재 도서관 인원 포화!" 경고가 한 번 출력됩니다.
+이후 인원이 줄어들었다가 다시 5명 이상이 되면 또 한 번 경고가 출력됩니다.
+computed를 사용해:
+도서관에 출입한 마법사 중 가장 많이 출입한 마법사의 이름과 출입 횟수를 표시합니다.
+각 출입 기록 옆에는 [퇴장] 버튼이 있으며,
+
+:오른쪽을_가리키는_손_모양: 클릭 시 해당 마법사가 도서관 출입 기록에서 제거됩니다.
+
+도서관 인원이 포화 상태(5명 이상)일 때는:
+화면에 ⚠ 현재 도서관 인원 포화 상태입니다! 더 이상 출입할 수 없습니다. 라는 경고 메시지가 표시됩니다.
+출입 기록 추가 버튼이 비활성화됩니다. -->
+
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue.js Framework</title>
+  </head>
+  <body>
+    <div id="app">
+      <h2>📚 호그와트 마법 도서관 출입 관리 시스템</h2>
+      <label> 마법사 이름 입력 : <input type="text" v-model="name" /> </label>
+      <button @click="addMagician">출입 기록 추가</button>
+
+      <p v-if="full" style="color: red">⚠ 현재 도서관 인원 포화!</p>
+
+      <h3>현재 도서관 출입 중 (최근 순):</h3>
+      <ul>
+        <li v-for="(magician, index) in magicians" :key="magician">
+          {{index + 1}}. {{ magician }}
+          <button @click="exitLibrary(index)">퇴장</button>
+        </li>
+      </ul>
+
+      <h3>출입 횟수 통계:</h3>
+      <ul>
+        <li v-for="(count, name) in statistics" :key="name">
+          {{ name }} : {{ count }}회
+        </li>
+      </ul>
+
+      <p v-if="magicians.length > 0">
+        가장 많이 출입한 마법사: {{ maxMagician }}
+        ({{statistics[maxMagician]}}회)
+      </p>
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      let vm = Vue.createApp({
+        name: 'App',
+        created() {
+          console.log('📚 도서관 관리 시스템 가동!');
+        },
+        mounted() {
+          console.log('✅ 도서관 준비 완료!');
+        },
+        data() {
+          return {
+            message: 'ㅈ',
+            name: '',
+            magicians: [],
+            full: false,
+            statistics: {},
+          };
+        },
+        methods: {
+          addMagician() {
+            if (this.magicians.includes(this.name)) {
+              alert('이미 출입 중인 마법사입니다.');
+              return;
+            }
+            if (this.magicians.length >= 5) {
+              this.full = true;
+              return;
+            }
+            if (this.statistics[this.name] !== undefined) {
+              this.statistics[this.name]++;
+            } else {
+              this.statistics[this.name] = 1;
+            }
+            this.magicians.unshift(this.name);
+            this.name = '';
+          },
+          exitLibrary(index) {
+            this.magicians.splice(index, 1);
+            this.full = false;
+          },
+        },
+        computed: {
+          maxMagician() {
+            let maxMagician = '';
+            let maxCount = 0;
+            for (let magician in this.statistics) {
+              if (this.statistics[magician] > maxCount) {
+                maxMagician = magician;
+                maxCount = this.statistics[magician];
+              }
+            }
+            return maxMagician;
+          },
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>

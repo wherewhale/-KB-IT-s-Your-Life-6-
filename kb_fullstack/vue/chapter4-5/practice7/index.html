@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue.js Framework</title>
+  </head>
+  <body>
+    <div id="app">
+      <div class="button-container">
+        <button
+          v-for="(price, name) in merchandises"
+          @click="addToCart(name, price)"
+          :key="name"
+        >
+          {{name}} 추가
+        </button>
+      </div>
+      <div class="cart-container">
+        <h2>장바구니 :</h2>
+        <ul>
+          <li v-for="(item, index) in cart" :key="item.name">
+            {{ item.name }} ({{ item.price }}G)
+            <button @click="removeFromCart(index)">삭제하기</button>
+          </li>
+        </ul>
+        <p>총 합계: {{ totalPrice }}G</p>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      const merchandises = {
+        지팡이: 100,
+        로브: 200,
+        부엉이: 300,
+      };
+      let vm = Vue.createApp({
+        name: 'App',
+        data() {
+          return {
+            cart: [],
+            merchandises,
+          };
+        },
+        methods: {
+          addToCart(name, price) {
+            this.cart.push({ name, price });
+          },
+          removeFromCart(idx) {
+            this.cart.splice(idx, 1);
+          },
+        },
+        computed: {
+          totalPrice() {
+            return this.cart.reduce((sum, item) => sum + item.price, 0);
+          },
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>
