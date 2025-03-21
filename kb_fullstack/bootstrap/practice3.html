@@ -1,0 +1,77 @@
+<!-- 지하철 좌석 정보가 항상 변한다는 걸 보여주기 위해,
+"좌석 현황 새로고침" 버튼을 눌렀을 때 매번 랜덤으로 비어있음 / 사용중 상태가 바뀌게 해보세요.
+Bootstrap list-group으로 출력합니다.
+좌석 종류: 창가, 복도, 우대석, 출입구 옆
+사용중일 땐 빨간색 fa-circle-xmark 아이콘과 글씨, 비어있을 땐 초록색 fa-circle-check 아이콘과 글씨로 출력하세요.-->
+
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue.js Framework</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h1>3번 문제: 좌석 현황 표시 (랜덤 상태 갱신)</h1>
+      <button type="button" class="btn btn-success mt-2" @click="getSeats">
+        <i class="fa-solid fa-rotate-right"></i>
+        좌석 현황 새로고침
+      </button>
+      <ul class="list-group mt-4">
+        <li v-for="(seat, index) in seats" :key="index" class="list-group-item">
+          <i
+            :class="'fa-solid ' + getSeatIcon(seat) + ' ' + getSeatColor(seat)"
+          ></i>
+          {{ seatTypes[index] }} -
+          <span :class="getSeatColor(seat)">{{ getText(seat) }}</span>
+        </li>
+      </ul>
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      let vm = Vue.createApp({
+        name: 'App',
+        data() {
+          return {
+            seats: [],
+            seatTypes: ['창가', '복도', '우대석', '출입구 옆'], // 좌석 종류 리스트
+          };
+        },
+        methods: {
+          getSeats() {
+            console.log(this.seats);
+            this.seats = Array(4)
+              .fill(null)
+              .map(() => Math.random() < 0.5);
+          },
+          getSeatIcon(seat) {
+            return seat ? 'fa-check' : 'fa-circle-xmark';
+          },
+          getSeatColor(seat) {
+            return seat ? 'text-success' : 'text-danger';
+          },
+          getText(seat) {
+            return seat ? '사용중' : '비어있음';
+          },
+        },
+        mounted() {
+          this.getSeats(); // 페이지 로딩 시 랜덤 상태 설정
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>
