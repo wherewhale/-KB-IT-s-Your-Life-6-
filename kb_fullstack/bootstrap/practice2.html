@@ -1,0 +1,61 @@
+<!-- 버튼 클릭 시 출구 안내 리스트가 표시되고, 다시 클릭 시 숨겨지도록 합니다.
+Bootstrap list-group을 사용해 항목을 표시합니다.
+각 출구 항목 앞에는 Fontawesome 아이콘 fa-location-dot을 넣으세요.
+리스트 항목은 "출구 번호 - 주변 시설" 형식으로 3개 이상 만들어주세요. -->
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue.js Framework</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h1>2번 문제: 출구 안내 리스트</h1>
+      <button
+        type="button"
+        class="btn btn-secondary mt-2"
+        @click="showEnterNumber"
+      >
+        <i class="fa-solid fa-location-dot"></i>
+        출구 안내 보기
+      </button>
+      <ul class="list-group mt-4" v-if="isShown">
+        <li class="list-group-item">📌 1번 출구 : 대형서점</li>
+        <li class="list-group-item">📌 2번 출구 : 커피숍</li>
+        <li class="list-group-item">📌 3번 출구 : 쇼핑몰</li>
+        <li class="list-group-item">📌 4번 출구 : 케이크 가게</li>
+        <li class="list-group-item">📌 5번 출구 : 우리집</li>
+      </ul>
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      let vm = Vue.createApp({
+        name: 'App',
+        data() {
+          return {
+            isShown: false,
+          };
+        },
+        methods: {
+          showEnterNumber() {
+            this.isShown = !this.isShown;
+          },
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>

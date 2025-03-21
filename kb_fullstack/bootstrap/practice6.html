@@ -1,0 +1,111 @@
+<!-- 6번 문제: 자동 추천 + 직접 선택 가능한 ‘덜 혼잡한 시간대 추천’
+:메모: 문제 설명
+mounted 시 자동으로 오늘 가장 덜 혼잡한 추천 시간대를 표시해주고,
+그 후 사용자가 07~08시, 08~09시, 09~10시, 10~11시 버튼을 클릭하면
+그 시간대의 혼잡도 결과와 비교해 추천 메시지를 갱신해주는 기능을 만들어보세요.
+페이지 로드(mounted) 시 자동 추천 메시지 출력
+
+4개의 시간대 버튼
+클릭 시 혼잡도 결과와 추천 메시지가 표시됨
+Fontawesome fa-clock 아이콘과 Bootstrap alert 활용 -->
+
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue.js Framework</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h1>6번 문제: 가장 덜 혼잡한 시간대 추천</h1>
+      <div class="alert alert-info">
+        <i class="fa-solid fa-clock"></i>
+        오늘의 추천 시간대:
+        <b>{{recommendTime}}시</b> (가장 여유롭습니다!)
+      </div>
+      <div class="d-flex gap-2 mb-4">
+        <button
+          v-for="time in peoplePerTime"
+          :value="time.time"
+          :class="selectedTime === time.time ? 'btn-outline-primary btn active' : 'btn-outline-primary btn'"
+          @click="selectTime"
+        >
+          <i class="fa-solid fa-clock"></i>{{time.time}}시
+        </button>
+      </div>
+      <div v-if="selectedTime !== recommendTime" class="alert alert-warning">
+        {{selectedTime}}시: 혼잡합니다! 추천 : {{recommendTime}}시 시간대를
+        이용하세요.
+      </div>
+      <div v-else class="alert alert-success">
+        {{selectedTime}}시: 비교적 여유롭습니다! 이용해보세요.
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      let vm = Vue.createApp({
+        name: 'App',
+        data() {
+          return {
+            recommendTime: '',
+            selectedTime: undefined,
+            peoplePerTime: [
+              { time: '07 ~ 08', num: 100 },
+              { time: '08 ~ 09', num: 200 },
+              { time: '09 ~ 10', num: 30 },
+              { time: '10 ~ 11', num: 200 },
+            ],
+          };
+        },
+        methods: {
+          getMinTime() {
+            let minTime = '';
+            let peopleNum = Infinity;
+            this.peoplePerTime.forEach((people) => {
+              if (people.num < peopleNum) {
+                peopleNum = people.num;
+                minTime = people.time;
+              }
+            });
+            this.recommendTime = minTime;
+          },
+          getResult(selectedTime) {
+            if (selectedTime !== this.time) {
+              return `${selectedTime}시: 혼잡합니다! 추천 : ${this.recommendTime}시 시간대를 이용하세요.`;
+            } else {
+              return `${selectedTime}시: 비교적 여유롭습니다! 이용해보세요.`;
+            }
+          },
+          getResultColor(selectedTime) {
+            if (selectedTime !== this.time) {
+              return 'alert-warning';
+            } else {
+              return 'alert-success';
+            }
+          },
+          selectTime(e) {
+            this.selectedTime = e.target.value;
+          },
+        },
+        mounted() {
+          //함수 호출
+          this.getMinTime();
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>
