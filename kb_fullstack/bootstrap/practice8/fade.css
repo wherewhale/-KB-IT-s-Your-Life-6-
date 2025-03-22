@@ -1,0 +1,17 @@
+/* 기본 투명 상태 */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.8s ease-in-out;
+}
+
+/* 진입 전 (0% 투명) */
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+/* 진입 후 (100% 불투명) */
+.fade-enter-to,
+.fade-leave-from {
+  opacity: 1;
+}
