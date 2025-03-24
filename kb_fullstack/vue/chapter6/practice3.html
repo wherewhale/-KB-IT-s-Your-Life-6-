@@ -1,0 +1,153 @@
+<!-- 상단에 v-for로 정렬 버튼 3개(평점 높은순, 평점 낮은순, 리뷰 많은순)을 출력.
+클릭 시 선택된 버튼에만 보라색 배경, 흰 글씨, 두꺼운 글씨 스타일 적용 (아이콘 표시 포함).
+선택된 정렬 방식에 따라 하단 맛집 카드 리스트가 즉시 재정렬.
+각 카드에는
+맛집 이름
+평균 평점 (별 아이콘 + 점수 표시)
+리뷰 수 (코멘트 아이콘 + 리뷰 수 표시)
+카드 정렬은 computed 속성을 활용.
+카드 레이아웃은 bootstrap row + col-md-4 구성.
+정렬 버튼 옆에는 FontAwesome의 check 아이콘이 활성화 시 나타나도록 구성.
+마우스 호버 시 카드에 살짝 확대되는 효과 추가. -->
+
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue.js Framework</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+      li {
+        list-style: none;
+      }
+      .shadow-danger {
+        box-shadow: 0px 4px 10px red; /* 빨간색 그림자 */
+      }
+      .shadow-success {
+        box-shadow: 0px 4px 10px green; /* 초록 그림자 */
+      }
+      .shadow-warning {
+        box-shadow: 0px 4px 10px orange; /* 노란 그림자 */
+      }
+      .selectedButton {
+        background-color: purple;
+        color: white;
+        font-weight: bold;
+      }
+      li:hover {
+        transform: scale(1.05);
+        transition: transform 0.3s ease;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app" class="container">
+      <h1>세종대 맛집 추천 리스트 🥄</h1>
+      <div class="d-flex gap-4 mb-4">
+        <button
+          class="btn"
+          v-for="sortingType in sortingTypes"
+          :class="{'btn-outline-secondary': selectedSortingType !== sortingType, 'selectedButton' : selectedSortingType === sortingType}"
+          @click="onChangeSort(sortingType)"
+        >
+          <i
+            v-if="selectedSortingType === sortingType"
+            class="fa-solid fa-check"
+          ></i>
+          {{sortingType}}
+        </button>
+      </div>
+
+      <ul class="row">
+        <li class="col-md-4 p-2" v-for="restaurant in sortedRestaurants">
+          <div
+            class="card rounded border border-2 p-4"
+            :class="getBorderStyle(getAverageScore(restaurant.reviews))"
+          >
+            <h4>{{restaurant.name}}</h4>
+            <p>
+              <i class="fa-solid fa-star text-warning"></i> 평균 평점 :
+              {{getAverageScore(restaurant.reviews)}}
+            </p>
+            <p>
+              <i class="fa-solid fa-comment text-secondary"></i> 리뷰 수 : {{
+              restaurant.reviews.length }}
+            </p>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      let vm = Vue.createApp({
+        name: 'App',
+        data() {
+          return {
+            selectedSortingType: '평점 높은순',
+            sortingTypes: ['평점 높은순', '평점 낮은순', '리뷰 많은순'],
+            restaurants: [
+              { name: '빠오즈푸', reviews: [4.7, 4.8, 4.6] },
+              { name: '시홍쓰', reviews: [4.2, 4.0, 4.1] },
+              { name: '오사이초밥', reviews: [3.7, 3.6, 3.8, 3.3] },
+              { name: '은혜즉석떡볶이', reviews: [4.5, 2, 1] },
+              { name: '우화등선', reviews: [3.2, 3.4, 3.1, 2.6, 4] },
+              { name: '세종원', reviews: [3.9, 4.0, 3.8] },
+            ],
+          };
+        },
+        methods: {
+          getAverageScore(reviews) {
+            const sum = reviews.reduce((acc, cur) => acc + cur, 0);
+            return (sum / reviews.length).toFixed(2);
+          },
+          getBorderStyle(score) {
+            if (score >= 4.5) {
+              return 'border-success shadow-success';
+            } else if (score >= 3.5) {
+              return 'border-warning shadow-warning';
+            } else {
+              return 'border-danger shadow-danger';
+            }
+          },
+          onChangeSort(sortingType) {
+            this.selectedSortingType = sortingType;
+          },
+        },
+        computed: {
+          sortedRestaurants() {
+            const newRestaurants = this.restaurants.slice();
+            newRestaurants.sort((a, b) => {
+              if (this.selectedSortingType === '평점 높은순') {
+                return (
+                  this.getAverageScore(b.reviews) -
+                  this.getAverageScore(a.reviews)
+                );
+              } else if (this.selectedSortingType === '평점 낮은순') {
+                return (
+                  this.getAverageScore(a.reviews) -
+                  this.getAverageScore(b.reviews)
+                );
+              } else {
+                return b.reviews.length - a.reviews.length;
+              }
+            });
+            return newRestaurants;
+          },
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>
