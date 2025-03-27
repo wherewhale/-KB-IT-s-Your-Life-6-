@@ -35,47 +35,31 @@
   border: 1px solid #dfe4ea;
   padding: 0 12px;
 }
-.feedbackBox {
+.feedbackContainer {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
   gap: 12px;
-  padding: 0 12px;
-  border: 1px solid #dfe4ea;
-  border-radius: 12px;
-  background-color: white;
-}
-.buttonDelete {
-  background-color: #ff4757;
-  color: white;
+  margin-top: 24px;
 }
 </style>
 
 <template>
   <div class="container">
-    <p class="text-alert">📢 피드백은 솔직하게 작성해주세요!</p>
+    <p class="text-alert">{{ feedbackGuideMessage }}</p>
     <h2>💬 오늘의 피드백 기록</h2>
-    <form class="feedbackForm" @submit.prevent="submitFeedback">
-      >
+    <div class="feedbackForm">
       <input
         class="textInput"
         type="text"
-        v-model="feedbackText"
+        :value="feedbackText"
+        @input="$emit('update:feedbackText', $event.target.value)"
         placeholder="피드백을 입력하세요"
       />
-      <button type="submit" class="submitButton">추가</button>
-    </form>
-    <div>
-      <div
-        class="feedbackBox"
-        v-for="(feedback, idx) in feedbackGuideMessage"
-        :key="feedback[0] + idx"
-      >
-        <p>
-          {{ feedback }}
-        </p>
-        <button class="buttonDelete" @click="deleteFeedback(idx)">삭제</button>
-      </div>
+      <!-- 부모 객체에 데이터를 실시간 전달할 때에는 update를 넣어주어야 한다. -->
+      <button class="submitButton" @click="$emit('add-feedback')">추가</button>
+    </div>
+    <div class="feedbackContainer">
+      <slot>등록된 피드백이 없습니다.</slot>
     </div>
   </div>
 </template>
@@ -84,22 +68,15 @@
 export default {
   name: 'FeedbackForm',
   inject: ['feedbackGuideMessage'],
-  data() {
-    return {
-      feedbackText: this.feedback,
-    };
+  emits: ['update:feedbackText', 'add-feedback'],
+  props: {
+    feedbackText: {
+      type: String,
+      default: '',
+    },
   },
-  methods: {
-    submitFeedback() {
-      // Handle the feedback submission logic here
-      console.log('Feedback submitted:', this.feedbackText);
-      this.feedbackGuideMessage.push(this.feedbackText);
-      this.feedbackText = ''; // Clear the input field after submission
-    },
-    deleteFeedback(index) {
-      console.log(index);
-      this.feedbackGuideMessage.splice(index, 1);
-    },
+  data() {
+    return {};
   },
 };
 </script>

@@ -47,6 +47,20 @@ body {
   border: 0;
   margin-top: 20px;
 }
+.feedbackBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 0 12px;
+  border: 1px solid #dfe4ea;
+  border-radius: 12px;
+  background-color: white;
+}
+.buttonDelete {
+  background-color: #ff4757;
+  color: white;
+}
 </style>
 
 <template>
@@ -87,7 +101,23 @@ body {
       <template #wrong></template>
     </QuizCard>
 
-    <FeedbackForm v-if="activeId === '3'" />
+    <!-- TODO: v-model, event 수신해서 값을 바꾸는 형식으로 수정해야 함 -->
+    <FeedbackForm
+      v-if="activeId === '3'"
+      v-model:feedbackText="feedbackText"
+      @add-feedback="addFeedback"
+    >
+      <div
+        class="feedbackBox"
+        v-for="(feedback, idx) in feedbackList"
+        :key="feedback[0] + idx"
+      >
+        <p>
+          {{ feedback }}
+        </p>
+        <button class="buttonDelete" @click="deleteFeedback(idx)">삭제</button>
+      </div>
+    </FeedbackForm>
   </div>
 </template>
 
@@ -97,7 +127,6 @@ import LineCard from './components/LineCard.vue';
 import QuizCard from './components/QuizCard.vue';
 import ButtonBar from './components/ButtonBar.vue';
 import FeedbackForm from './components/FeedbackForm.vue';
-import { ref } from 'vue';
 
 export default {
   name: 'App',
@@ -136,7 +165,7 @@ export default {
             'https://cdn.lecturernews.com/news/photo/202111/81282_287409_3646.png',
         },
       ],
-      feedbackGuideMessage: ref(['오늘 좀 치더라구용', '이런 연기 처음이야']),
+      feedbackGuideMessage: '📢 피드백은 솔직하게 작성해주세요!',
     };
   },
   data() {
@@ -149,6 +178,12 @@ export default {
         { id: '2', defaultLabel: '📝 퀴즈 시작' },
         { id: '3', defaultLabel: '💬 피드백 작성' },
       ],
+      feedbackList: [
+        '너무 잘했어요!',
+        '조금 더 자신감을 가져보세요!',
+        '대사가 길어요! 천천히 연기해보세요!',
+      ],
+      feedbackText: '',
     };
   },
   methods: {
@@ -164,6 +199,16 @@ export default {
         this.activeId = null; // 클릭한 버튼이 이미 활성화된 경우 비활성화
       } else {
         this.activeId = buttonId;
+      }
+    },
+    deleteFeedback(index) {
+      console.log(index);
+      this.feedbackList.splice(index, 1);
+    },
+    addFeedback() {
+      if (this.feedbackText.trim().length > 2) {
+        this.feedbackList.push(this.feedbackText);
+        this.feedbackText = ''; // 입력 필드 초기화
       }
     },
   },
