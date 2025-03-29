@@ -1,16 +1,31 @@
-<style>
+<style scoped>
+.menu {
+  padding: 0 2rem;
+}
+
+.menu h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
 ul {
   padding: 0;
+}
+
+.menu li {
+  font-size: 1.5rem;
 }
 </style>
 
 <template>
-  <h2>카테고리</h2>
-  <ul>
-    <li v-for="category in CATEGORIES" :key="category.id">
-      {{ category.name }}
-    </li>
-  </ul>
+  <aside class="menu">
+    <h2>카테고리</h2>
+    <ul>
+      <li v-for="category in CATEGORIES" :key="category.id">
+        {{ category.name }}
+      </li>
+    </ul>
+  </aside>
 </template>
 
 <script setup>
