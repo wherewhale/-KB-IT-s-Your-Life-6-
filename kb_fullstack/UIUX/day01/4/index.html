@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* 모바일 */
+      h1 {
+        color: orange;
+      }
+      /* 태블릿 사이즈 */
+      /* 762 <= ?? <= 1024 */
+      @media screen and (min-width: 768px) {
+        h1 {
+          color: green;
+        }
+      }
+      /* 데스크탑 사이즈 */
+      /* 1024 <= ?? */
+      @media screen and (min-width: 1024px) {
+        h1 {
+          color: red;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Hello</h1>
+  </body>
+</html>
