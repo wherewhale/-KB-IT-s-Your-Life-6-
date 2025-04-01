@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #custom-button {
+        display: inline-block;
+        background-color: blue;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- role -->
+    <div id="custom-button" role="button">확인</div>
+
+    <!-- aria-label -->
+    <button aria-label="확인">✅</button>
+
+    <!-- aria-labelledby -->
+    <h2 id="form-title">회원 가입 양식</h2>
+    <p>로그인으로 서비스를 모두 이용하세요.</p>
+    <form action="" aria-labelledby="form-title">
+      <label for="">이메일: <input type="email" /></label>
+    </form>
+
+    <!-- aria-hidden -->
+    <span aria-hidden="true">⭐️</span>
+    <span>즐겨찾기</span>
+
+    <!-- aria-expanded -->
+    <hr />
+    <button aria-expanded="true">메뉴</button>
+    <div id="menu">
+      <ul>
+        <li>홈</li>
+        <li>서비스</li>
+      </ul>
+    </div>
+
+    <!-- aria-selected -->
+    <div class="tablist">
+      <button role="tab" aria-selected="true">탭1</button>
+      <button role="tab" aria-selected="false">탭2</button>
+    </div>
+
+    <!-- aria-describedby -->
+    <button aria-describedby="desc">삭제</button>
+    <p id="desc">해당 버튼을 클릭하면 데이터가 영구적으로 삭제됩니다.</p>
+  </body>
+</html>
