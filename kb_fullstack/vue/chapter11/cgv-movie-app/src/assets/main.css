@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #181818;
+  color: white;
+}
+
+button {
+  margin-top: 2rem;
+  background-color: gold;
+  font-weight: bold;
+  border: none;
+  border-radius: 0.5rem;
+  color: black;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+}
