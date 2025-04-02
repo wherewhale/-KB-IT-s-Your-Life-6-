@@ -13,11 +13,22 @@ img {
   object-fit: cover;
   object-position: center;
 }
+
+.movie-container {
+  width: fit-content;
+  margin: auto;
+  background-color: #2a2a2a;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
 </style>
 
 <template>
   <p v-if="isLoading">로딩 중... (스피너 모시깽)</p>
-  <div v-else>
+  <div v-else class="movie-container">
     <h2 class="movie-title">🎥{{ movie.title }} ({{ movie.year }})</h2>
     <p>감독 : {{ movie.director }}</p>
     <p>줄거리 : {{ movie.description }}</p>

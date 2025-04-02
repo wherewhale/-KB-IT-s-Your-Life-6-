@@ -8,7 +8,10 @@ const instance = axios.create({
 export const getMovieList = async () => {
   try {
     const response = await instance.get('/movies');
-    return response.data;
+    return response.data.map((movie) => ({
+      ...movie,
+      poster: movie.poster.replace(/[<>]/g, ''), // <, > 제거
+    }));
   } catch (e) {
     console.log('## 다음 오류가 발생했습니다.');
     if (e instanceof Error) console.log(e.message);
@@ -32,7 +35,6 @@ export const getMovieDetail = async (id) => {
 };
 
 export const postMovie = async (input) => {
-  console.log(input);
   try {
     await instance.post(`/movies`, {
       title: input.title,
@@ -41,6 +43,32 @@ export const postMovie = async (input) => {
       description: input.description,
       poster: input.poster,
     });
+  } catch (e) {
+    console.log('## 다음 오류가 발생했습니다.');
+    if (e instanceof Error) console.log(e.message);
+    else console.log(e);
+  }
+};
+
+export const putMovie = async (id, input) => {
+  try {
+    await instance.put(`/movies/${id}`, {
+      title: input.title,
+      year: input.year,
+      director: input.director,
+      description: input.description,
+      poster: input.poster,
+    });
+  } catch (e) {
+    console.log('## 다음 오류가 발생했습니다.');
+    if (e instanceof Error) console.log(e.message);
+    else console.log(e);
+  }
+};
+
+export const deleteMovie = async (id) => {
+  try {
+    await instance.delete(`/movies/${id}`);
   } catch (e) {
     console.log('## 다음 오류가 발생했습니다.');
     if (e instanceof Error) console.log(e.message);

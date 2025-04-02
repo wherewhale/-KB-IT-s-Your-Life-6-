@@ -17,12 +17,12 @@
       "poster": "<https://an2-img.amz.wtchn.net/image/v2/6gyX67_I5PHfYemQIUCw5A.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1KbklsMHNJbkFpT2lJdmRqSXZjM1J2Y21VdmFXMWhaMlV2TVRZNE1qVTFOamt6TXpBME1ESXpNems0TWlKOS5UNm1iUEczZjQ0QWYzY0t3cmJ2ZjZvbUZMNlNldnVETmJUX29XVHVTUVhJ>"
     },
     {
-      "id": "3",
-      "title": "하울의 움직이는 성",
+      "title": "하울의 움직이는 성에는 뭐가 살까요?",
       "year": 2004,
       "director": "미야자키 하야오",
       "description": "노파로 변해버린 소녀 소피가 마법사 하울과 함께 전쟁과 저주를 극복해 나가는 환상적인 이야기. 사랑과 자유, 자아를 주제로 함.",
-      "poster": "<https://img1.daumcdn.net/thumb/R1280x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/c6Ad/image/nqyWegzq2oBYgABzbz-3oFqVoSg.jpeg>"
+      "poster": "https://img1.daumcdn.net/thumb/R1280x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/c6Ad/image/nqyWegzq2oBYgABzbz-3oFqVoSg.jpeg",
+      "id": "3"
     },
     {
       "id": "4",
@@ -41,12 +41,12 @@
       "poster": "<https://ojsfile.ohmynews.com/STD_IMG_FILE/2013/0816/IE001611647_STD.jpg>"
     },
     {
-      "id": "6",
       "title": "붉은 돼지",
       "year": 1992,
       "director": "미야자키 하야오",
       "description": "1차 세계대전 이후 이탈리아 하늘을 누비는 전직 전투기 조종사 '포르코 로쏘'의 이야기. 인간성과 자존심을 날개에 실은 지브리의 명작.",
-      "poster": "<https://i.namu.wiki/i/rX7A-XD747Sv4okz3812JO-O44o75vrXVp71V2CGbQqKD-YIka_eXmhmSGzivKuAW6yplU1ElFLF9O5MnyXvqQ.webp>"
+      "poster": "https://i.namu.wiki/i/rX7A-XD747Sv4okz3812JO-O44o75vrXVp71V2CGbQqKD-YIka_eXmhmSGzivKuAW6yplU1ElFLF9O5MnyXvqQ.webp",
+      "id": "6"
     },
     {
       "id": "7",
@@ -79,22 +79,6 @@
       "director": "미야자키 하야오",
       "description": "물고기 소녀 포뇨가 인간 소년 소스케를 만나며 벌어지는 사랑과 변화의 이야기. 순수한 시선으로 자연과 사랑을 그린 동화 같은 작품.",
       "poster": "<https://i.namu.wiki/i/nbQNxmblTZSSTeTmHaQ0iWI56L1eJRUkGD0JM4_rRNfzUaumtEQi_A7sI878s1j0Ovw67A9LLRtGRzsV4Qpxvw.webp>"
-    },
-    {
-      "id": "ff95",
-      "title": "xptmxm",
-      "year": 123989,
-      "director": "asdfij",
-      "description": "asdifjasdifj",
-      "poster": "movies.value = await getMovieList();"
-    },
-    {
-      "id": "e978",
-      "title": "기생충",
-      "year": 2019,
-      "director": "봉준호",
-      "description": "2019년에 개봉한 봉준호 감독의 7번째 장편 영화. 상류층과 하류층, 두 가족의 만남을 다룬 대한민국의 사회고발물 성향의 블랙 코미디, 가족, 드라마 영화이다.",
-      "poster": "https://i.namu.wiki/i/4boZK6ES11yrzxeNA_KW7pD3rlQmz-q05BTroDyenSNsxs0K4HMJxVyC-exBjv40ShshjpxIKS45DLLPMPfU95aVCpKmW6a3ELtU0tDK50K-tr133XF7x53G8_hdV4WO-SECFzNkFE9xDKjgyllfkg.webp"
     }
   ]
 }

@@ -1,6 +1,5 @@
 <style scoped>
 main {
-  max-width: 768px;
   padding: 2rem;
 }
 </style>
@@ -9,9 +8,7 @@ main {
   <header></header>
   <main>
     <h1>🎥 지브리 영화 리스트</h1>
-    <button class="add-movie-button" @click="onModalOpen">
-      🎬 영화 추가하기
-    </button>
+    <button class="add-movie-button" @click="onModalOpen">🎬 영화 추가하기</button>
     <AddMovieModal :isOpen="showModal" @on-close="onModalClose" />
     <RouterView />
   </main>

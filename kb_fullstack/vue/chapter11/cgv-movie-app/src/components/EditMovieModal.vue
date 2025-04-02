@@ -15,7 +15,7 @@
           </form>
         </div>
         <div class="footer">
-          <button @click="onSubmit">등록</button>
+          <button @click="onSubmit">수정</button>
           <button @click="emit('on-close')">닫기</button>
         </div>
       </div>
@@ -25,7 +25,7 @@
 
 <script setup>
 import '@/assets/modal.css';
-import { postMovie } from '@/api/movie';
+import { putMovie } from '@/api/movie';
 import { reactive, ref } from 'vue';
 
 const isLoading = ref(false);
@@ -36,14 +36,18 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  movie: {
+    type: Object,
+    required: true,
+  },
 });
 
 const movieForm = reactive({
-  title: null,
-  year: null,
-  director: null,
-  description: null,
-  poster: null,
+  title: props.movie.title,
+  year: props.movie.year,
+  director: props.movie.director,
+  description: props.movie.description,
+  poster: props.movie.poster,
 });
 
 const onSubmit = async () => {
@@ -59,12 +63,7 @@ const onSubmit = async () => {
   } else if (movieForm.poster === null) {
     alert('포스터 url을 추가해주세요.');
   } else {
-    await postMovie(movieForm);
-    movieForm.title = null;
-    movieForm.year = null;
-    movieForm.director = null;
-    movieForm.description = null;
-    movieForm.poster = null;
+    await putMovie(props.movie.id, movieForm);
     emit('on-close');
   }
   isLoading.value = false;
