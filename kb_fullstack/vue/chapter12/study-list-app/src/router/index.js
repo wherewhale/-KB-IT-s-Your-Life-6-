@@ -24,6 +24,16 @@ const router = createRouter({
       name: 'studyAdd',
       component: () => import('../pages/StudyAddPage.vue'),
     },
+    {
+      path: '/studies/:id/edit',
+      name: 'studyEdit',
+      component: () => import('../pages/StudyEdit.vue'),
+    },
+    {
+      path: '/studies/:id/apply',
+      name: 'studyApply',
+      component: () => import('../pages/StudyApply.vue'),
+    },
   ],
 });
 

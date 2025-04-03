@@ -17,11 +17,7 @@
   <div>
     <div class="filter-container">
       <label>
-        <input
-          type="checkbox"
-          :value="isRecruiting"
-          @change="onChangeFilter(!isRecruiting)"
-        />
+        <input type="checkbox" :value="isRecruiting" @change="onChangeFilter(!isRecruiting)" />
         모집 중만 보기
       </label>
       <select :value="sorting" @change="onChangeSortValue($event)">
@@ -38,16 +34,14 @@
 </template>
 
 <script setup>
-import { inject, computed } from 'vue';
+import { inject } from 'vue';
 import StudyCard from './StudyCard.vue';
 const studies = inject('studies');
 const isRecruiting = inject('isRecruiting');
 const sorting = inject('sorting');
-const onChangeFilter = inject('onChangeFilter');
-const onChangeSort = inject('onChangeSort');
+const { onChangeFilter, onChangeSort } = inject('actions');
 
 const onChangeSortValue = (event) => {
-  console.log(event.target.value);
   onChangeSort(event.target.value);
 };
 </script>

@@ -6,9 +6,7 @@ h1 {
 
 <template>
   <main>
-    <router-link to="/studies/add" class="btn btn-primary mb-3">
-      ➕ 스터디 등록
-    </router-link>
+    <router-link to="/studies/add" class="btn btn-primary mb-3"> ➕ 스터디 등록 </router-link>
     <h1>📚 스터디 목록</h1>
     <StudyList />
   </main>

@@ -35,3 +35,30 @@ export const postStudy = async (data) => {
     console.log('postStudy 요청 실패', e);
   }
 };
+
+export const putStudy = async (id, data) => {
+  try {
+    const response = await instance.put(`/studies/${id}`, data);
+    return response.data;
+  } catch (e) {
+    console.log('putStudy 요청 실패', e);
+  }
+};
+
+export const getStudyApply = async (id) => {
+  try {
+    const response = await instance.get(`/applications?studyId=${id}`);
+    return response.data;
+  } catch (e) {
+    console.log('getStudyApply 요청 실패', e);
+  }
+};
+
+export const postStudyApply = async (data) => {
+  try {
+    const response = await instance.post('/applications', data);
+    return response.data;
+  } catch (e) {
+    console.log('postStudyApply 요청 실패', e);
+  }
+};
