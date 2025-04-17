@@ -4,6 +4,7 @@ public class SupersonicAirplane extends Airplane {
     //상수 선언
     public static final int NORMAL = 1;
     public static final int SUPERSONIC = 2;
+
     //상태 필드 선언
     public int flyMode = NORMAL;
 
