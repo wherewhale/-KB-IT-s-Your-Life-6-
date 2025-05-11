@@ -16,7 +16,7 @@ public class UserFileService {
         String birth = "";
 
         try (BufferedReader br = new BufferedReader(
-                new FileReader("/Users/wha1e/Documents/Develop/IT's Your Life/-KB-IT-s-Your-Life-6-/fullstack/04_java/study/src/practice13/user_input.txt")
+                new FileReader("/Users/son-yeongho/Desktop/Work/공부/-KB-IT-s-Your-Life-6-/fullstack/04_java/study/src/practice13/user_input.txt")
         )) {
 
             String[] tempBuffer = br.readLine().split(": ");
