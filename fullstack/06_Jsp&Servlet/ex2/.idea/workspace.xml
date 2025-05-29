@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="36f137f6-fbbe-48a9-b875-aef7f649bbc8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../04_java/designpattern/src/builder/Builder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../04_java/designpattern/src/builder/Director.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../04_java/designpattern/src/builder/HTMLBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../04_java/designpattern/src/builder/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../04_java/designpattern/src/builder/TextBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../04_java/designpattern/src/builder2/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../04_java/designpattern/src/builder2/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../04_java/designpattern/src/composite/Directory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../04_java/designpattern/src/composite/Entry.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../04_java/designpattern/src/composite/File.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../04_java/designpattern/src/composite/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../04_java/designpattern/src/prototype/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../04_java/designpattern/src/prototype/MessageBox.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../04_java/designpattern/src/prototype/UnderlinePen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../04_java/designpattern/src/prototype/framework/Manager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../04_java/designpattern/src/prototype/framework/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../04_java/designpattern/src/proxy/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../04_java/designpattern/src/proxy/PrintProxy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../04_java/designpattern/src/proxy/Printable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../04_java/designpattern/src/proxy/Printer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../04_java/designpattern/src/strategy/Hand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../04_java/designpattern/src/strategy/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../04_java/designpattern/src/strategy/Player.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../04_java/designpattern/src/strategy/ProbStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../04_java/designpattern/src/strategy/Strategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../04_java/designpattern/src/strategy/WinningStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../04_java/jdbc_ex/jdbc_ex.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../04_java/jdbc_ex/src/main/java/org/scoula/jdbc_ex/common/JDBCUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../04_java/jdbc_ex/src/main/java/org/scoula/jdbc_ex/dao/SushiDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../04_java/jdbc_ex/src/main/java/org/scoula/jdbc_ex/dao/SushiDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../04_java/jdbc_ex/src/main/java/org/scoula/jdbc_ex/dao/UserDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../04_java/jdbc_ex/src/main/java/org/scoula/jdbc_ex/dao/UserDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../04_java/jdbc_ex/src/main/java/org/scoula/jdbc_ex/domain/UserVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../04_java/jdbc_ex/src/main/java/org/scoula/jdbc_ex/vo/SushiLogStat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../04_java/jdbc_ex/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../04_java/jdbc_ex/src/test/java/org/scoula/jdbc_ex/common/JDBCUtilTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../04_java/jdbc_ex/src/test/java/org/scoula/jdbc_ex/dao/SushiDaoTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../04_java/jdbc_ex/src/test/java/org/scoula/jdbc_ex/dao/UserDaoTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../04_java/jdbc_ex/src/test/java/org/scoula/jdbc_ex/test/ConnectionTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../04_java/jdbc_ex/src/test/java/org/scoula/jdbc_ex/test/CrudTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../04_java/jdbc_ex/src/test/java/org/scoula/jdbc_ex/test/SushiFlowTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../04_java/jdbc_ex/step01_tables.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../04_java/travelapp/database.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../04_java/travelapp/restaurant.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../04_java/travelapp/reviews_pokemon.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../04_java/travelapp/src/main/java/org/scoula/dao/TravelDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../04_java/travelapp/src/main/java/org/scoula/dao/TravelDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../04_java/travelapp/src/main/java/org/scoula/database/JDBCUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../04_java/travelapp/src/main/java/org/scoula/domain/TravelImageVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../04_java/travelapp/src/main/java/org/scoula/domain/TravelVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../04_java/travelapp/src/main/java/org/scoula/food/app/RestaurantApp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../04_java/travelapp/src/main/java/org/scoula/food/dao/RestaurantDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../04_java/travelapp/src/main/java/org/scoula/food/dao/RestaurantDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../04_java/travelapp/src/main/java/org/scoula/food/dataimport/ImportRestaurantData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../04_java/travelapp/src/main/java/org/scoula/food/dataimport/ImportReviewData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../04_java/travelapp/src/main/java/org/scoula/food/domain/RestaurantReviewVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../04_java/travelapp/src/main/java/org/scoula/food/domain/RestaurantVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../04_java/travelapp/src/main/java/org/scoula/food/service/RestaurantService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../04_java/travelapp/src/main/java/org/scoula/food/service/RestaurantServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../04_java/travelapp/src/main/java/org/scoula/travel/CSVTest1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../04_java/travelapp/src/main/java/org/scoula/travel/CSVTest2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../04_java/travelapp/src/main/java/org/scoula/travel/app/MenuItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../04_java/travelapp/src/main/java/org/scoula/travel/app/TravelApp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../04_java/travelapp/src/main/java/org/scoula/travel/dataimport/ImportImageData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../04_java/travelapp/src/main/java/org/scoula/travel/dataimport/ImportTravelData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../04_java/travelapp/src/main/java/org/scoula/travel/service/TravelService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../04_java/travelapp/src/main/java/org/scoula/travel/service/TravelServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../04_java/travelapp/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../04_java/travelapp/travel.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../06_MongoDB/java_ex/src/main/java/app/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../06_MongoDB/java_ex/src/main/java/app/Database.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../06_MongoDB/java_ex/src/main/java/app/MainStep5_Save.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../06_MongoDB/java_ex/src/main/java/app/domain/BandPOJO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../06_MongoDB/java_ex/src/main/java/app/domain/MemberPOJO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../06_MongoDB/java_ex/src/main/java/app/domain/Todo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../06_MongoDB/java_ex/src/main/java/practice01/Band.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../06_MongoDB/java_ex/src/main/java/practice01/BandComponent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../06_MongoDB/java_ex/src/main/java/practice01/BandProxy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../06_MongoDB/java_ex/src/main/java/practice01/MainStep1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../06_MongoDB/java_ex/src/main/java/practice01/MainStep2_SubBand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../06_MongoDB/java_ex/src/main/java/practice01/MainStep3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../06_MongoDB/java_ex/src/main/java/practice01/MainStep4.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../06_MongoDB/java_ex/src/main/java/practice01/Member.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../06_MongoDB/java_ex/src/main/java/sec01/ConnectionTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../06_MongoDB/java_ex/src/main/java/sec02/InsertManyTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../06_MongoDB/java_ex/src/main/java/sec02/InsertManyTest2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../06_MongoDB/java_ex/src/main/java/sec02/InsertOneTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../06_MongoDB/java_ex/src/main/java/sec03/FindOneTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../06_MongoDB/java_ex/src/main/java/sec03/FindTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../06_MongoDB/java_ex/src/main/java/sec04/UpdateManyTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../06_MongoDB/java_ex/src/main/java/sec04/UpdateOneTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../06_MongoDB/java_ex/src/main/java/sec05/DeleteManyTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../06_MongoDB/java_ex/src/main/java/sec05/DeleteOneTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../06_MongoDB/java_ex/src/main/resources/logback.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../04_java/designpattern/designpattern.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../04_java/designpattern/designpattern.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../04_java/study/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../04_java/study/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../04_java/study/src/algorithm/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../04_java/study/src/algorithm/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../04_java/study/src/practice13/ResultWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../04_java/study/src/practice13/ResultWriter.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="ex2" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="ex2" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="ex2" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="ex2" type="f1a62948:ProjectNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;wherewhale&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/wherewhale/-KB-IT-s-Your-Life-6-.git&quot;,
+    &quot;accountId&quot;: &quot;6e3df7a0-c67e-4dd0-bd3f-ac8cb6cff61a&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2xhmE119TGHQrthYVnYp2HmiQ9J" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.ex2 [war].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager" selected="Gradle.ex02">
+    <configuration name="ex02" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="war" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="Tomcat 9.0.105" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.105" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/Gradle___org_scoula___ex2_1_0_SNAPSHOT_war/" />
+      <option name="COMMON_VM_ARGUMENTS" value="-Dfile.encoding=UTF-8" />
+      <option name="UPDATING_POLICY" value="hot-swap-classes" />
+      <deployment>
+        <artifact name="Gradle : org.scoula : ex2-1.0-SNAPSHOT.war">
+          <settings>
+            <option name="CONTEXT_PATH" value="/" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="108f2e35-d5cc-4afb-b1b9-a476f34d4958" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="52695" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="Gradle : org.scoula : ex2-1.0-SNAPSHOT.war" />
+        </option>
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Gradle.ex02" />
+      <item itemvalue="Tomcat Server.Tomcat 9.0.105" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.ex02" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.26053.27" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.26053.27" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="36f137f6-fbbe-48a9-b875-aef7f649bbc8" name="Changes" comment="" />
+      <created>1748398563838</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1748398563838</updated>
+      <workItem from="1748398565005" duration="4415000" />
+      <workItem from="1748407842234" duration="109000" />
+      <workItem from="1748407960687" duration="130000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
