@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="@localhost">
+  <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.53">
+    <root id="1">
+      <DefaultCasing>mixed/mixed</DefaultCasing>
+      <DefaultEngine>InnoDB</DefaultEngine>
+      <DefaultTmpEngine>InnoDB</DefaultTmpEngine>
+      <ServerVersion>8.4.5</ServerVersion>
+    </root>
+    <schema id="2" parent="1" name="mysql">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="3" parent="1" name="information_schema">
+      <CollationName>utf8mb3_general_ci</CollationName>
+    </schema>
+    <schema id="4" parent="1" name="performance_schema">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="5" parent="1" name="sys">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="6" parent="1" name="employees">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="7" parent="1" name="shopdb">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="8" parent="1" name="world">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="9" parent="1" name="sakila">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="10" parent="1" name="missionDB">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="11" parent="1" name="sqldb">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="12" parent="1" name="speed_quiz">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="13" parent="1" name="tabledb">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="14" parent="1" name="recruitDB">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="15" parent="1" name="scoula_db">
+      <LastIntrospectionLocalTimestamp>2025-07-02.00:19:07</LastIntrospectionLocalTimestamp>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="16" parent="1" name="test_db">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="17" parent="1" name="job_platform">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="18" parent="1" name="jdbc_ex">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="19" parent="1" name="travel">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="20" parent="1" name="world2">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="21" parent="1" name="icecream_db">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="22" parent="1" name="PRACTICE">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <table id="23" parent="15" name="tbl_board">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <table id="24" parent="15" name="tbl_board_attachment">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <table id="25" parent="15" name="tbl_member">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <table id="26" parent="15" name="tbl_member_auth">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <column id="27" parent="23" name="no">
+      <AutoIncrement>14</AutoIncrement>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StoredType>int|0s</StoredType>
+    </column>
+    <column id="28" parent="23" name="title">
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StoredType>varchar(200)|0s</StoredType>
+    </column>
+    <column id="29" parent="23" name="content">
+      <Position>3</Position>
+      <StoredType>text|0s</StoredType>
+    </column>
+    <column id="30" parent="23" name="writer">
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+      <StoredType>varchar(50)|0s</StoredType>
+    </column>
+    <column id="31" parent="23" name="reg_date">
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+      <Position>5</Position>
+      <StoredType>datetime|0s</StoredType>
+    </column>
+    <column id="32" parent="23" name="update_date">
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+      <Position>6</Position>
+      <StoredType>datetime|0s</StoredType>
+    </column>
+    <index id="33" parent="23" name="PRIMARY">
+      <ColNames>no</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="34" parent="23" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="35" parent="24" name="no">
+      <AutoIncrement>1</AutoIncrement>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StoredType>int|0s</StoredType>
+    </column>
+    <column id="36" parent="24" name="filename">
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StoredType>varchar(256)|0s</StoredType>
+    </column>
+    <column id="37" parent="24" name="path">
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+      <StoredType>varchar(256)|0s</StoredType>
+    </column>
+    <column id="38" parent="24" name="content_type">
+      <Position>4</Position>
+      <StoredType>varchar(56)|0s</StoredType>
+    </column>
+    <column id="39" parent="24" name="size">
+      <Position>5</Position>
+      <StoredType>int|0s</StoredType>
+    </column>
+    <column id="40" parent="24" name="bno">
+      <NotNull>1</NotNull>
+      <Position>6</Position>
+      <StoredType>int|0s</StoredType>
+    </column>
+    <column id="41" parent="24" name="reg_date">
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+      <Position>7</Position>
+      <StoredType>datetime|0s</StoredType>
+    </column>
+    <foreign-key id="42" parent="24" name="tbl_board_attachment_ibfk_1">
+      <ColNames>bno</ColNames>
+      <OnDelete>cascade</OnDelete>
+      <RefColNames>no</RefColNames>
+      <RefTableName>tbl_board</RefTableName>
+    </foreign-key>
+    <index id="43" parent="24" name="PRIMARY">
+      <ColNames>no</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="44" parent="24" name="bno">
+      <ColNames>bno</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="45" parent="24" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="46" parent="25" name="username">
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StoredType>varchar(50)|0s</StoredType>
+    </column>
+    <column id="47" parent="25" name="password">
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StoredType>varchar(128)|0s</StoredType>
+    </column>
+    <column id="48" parent="25" name="email">
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+      <StoredType>varchar(50)|0s</StoredType>
+    </column>
+    <column id="49" parent="25" name="reg_date">
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+      <Position>4</Position>
+      <StoredType>datetime|0s</StoredType>
+    </column>
+    <column id="50" parent="25" name="update_date">
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+      <Position>5</Position>
+      <StoredType>datetime|0s</StoredType>
+    </column>
+    <index id="51" parent="25" name="PRIMARY">
+      <ColNames>username</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="52" parent="25" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="53" parent="26" name="username">
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StoredType>varchar(50)|0s</StoredType>
+    </column>
+    <column id="54" parent="26" name="auth">
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StoredType>varchar(50)|0s</StoredType>
+    </column>
+    <foreign-key id="55" parent="26" name="fk_authorities_users">
+      <ColNames>username</ColNames>
+      <RefColNames>username</RefColNames>
+      <RefTableName>tbl_member</RefTableName>
+    </foreign-key>
+    <index id="56" parent="26" name="PRIMARY">
+      <ColNames>username
+auth</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="57" parent="26" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+  </database-model>
+</dataSource>

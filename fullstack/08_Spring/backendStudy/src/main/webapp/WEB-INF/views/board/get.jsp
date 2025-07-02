@@ -9,12 +9,7 @@
   <div>
     <i class="fas fa-clock"></i>
     <fmt:formatDate pattern="yyyy-MM-dd" value="${board.regDate}"/>
-
   </div>
-</div>
-<hr>
-<div>
-  ${board.content}
 </div>
 <div class="text-end">
   <c:forEach var="file" items="${board.attaches}">
@@ -26,6 +21,12 @@
     </div>
   </c:forEach>
 </div>
+
+<hr>
+<div>
+  ${board.content}
+</div>
+
 <div class="mt-4">
   <a href="list" class="btn btn-primary"><i class="fas fa-list"></i> 목록</a>
   <a href="update?no=${board.no}" class="btn btn-primary"><i class="far fa-edit"></i> 수정</a>

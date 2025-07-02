@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 2.2//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.scoula.mapper.PostMapper">
+    <resultMap id="postMap" type="org.scoula.domain.PostVO">
+        <id column="id" property="id"/>
+        <result column="team_id" property="teamId"/>
+        <result column="title" property="title"/>
+        <result column="content" property="content"/>
+    </resultMap>
+
+    <select id="get" resultMap="postMap">
+        SELECT * FROM post
+        WHERE id=#{id}
+    </select>
+
+    <insert id="create">
+        INSERT INTO post(team_id, title, content)
+        VALUES (#{teamId}, #{title}, #{content})
+
+        <selectKey resultType="Long" keyProperty="id" keyColumn="id" order="AFTER">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+    </insert>
+</mapper>

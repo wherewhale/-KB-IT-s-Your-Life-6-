@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="258bc4f4-cb86-44bc-b24e-edbefb4fe40b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../ex03/src/main/java/org/scoula/ex03/LoginServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ex03/src/main/webapp/login_form.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ex04/src/main/java/org/scoula/ex04/CartDeleteCookieServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ex04/src/main/java/org/scoula/ex04/CartDeleteServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ex04/src/main/java/org/scoula/ex04/CartSaveCookieServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ex04/src/main/java/org/scoula/ex04/CartSaveServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ex04/src/main/java/org/scoula/ex04/CartViewCookieServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ex04/src/main/java/org/scoula/ex04/CartViewServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ex04/src/main/java/org/scoula/ex04/RequestServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ex04/src/main/java/org/scoula/ex04/ResponseRedirectServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ex04/src/main/java/org/scoula/ex04/filter/CharacterEncodeFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ex04/src/main/webapp/cookie_product.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ex04/src/main/webapp/response.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ex04/src/main/webapp/session_product.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ex06/src/main/java/org/scoula/ex06/DispatcherServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ex06/src/main/java/org/scoula/ex06/FrontControllerServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ex06/src/main/java/org/scoula/ex06/command/Command.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ex06/src/main/java/org/scoula/ex06/controller/HomeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ex06/src/main/java/org/scoula/ex06/controller/TodoController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ex06/src/main/webapp/WEB-INF/views/404.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ex06/src/main/webapp/WEB-INF/views/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ex06/src/main/webapp/WEB-INF/views/todo/create.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ex06/src/main/webapp/WEB-INF/views/todo/list.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ex06/src/main/webapp/WEB-INF/views/todo/update.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ex06/src/main/webapp/WEB-INF/views/todo/view.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ex2-2/src/main/webapp/copyright.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ex2-2/src/main/webapp/count.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ex2-2/src/main/webapp/count_view.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ex2-2/src/main/webapp/currentTime.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ex2-2/src/main/webapp/layout/header.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ex2-2/src/main/webapp/layout/main2.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ex2-2/src/main/webapp/main.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ex2-2/src/main/webapp/request.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ex2-2/src/main/webapp/session/login.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ex2-2/src/main/webapp/session/loginForm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ex2-2/src/main/webapp/session/loginInfo.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ex2-2/src/main/webapp/session/logout.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../practice08/src/main/java/org/scoula/practice08/snack/filter/CharacterEncodingFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../practice08/src/main/java/org/snack/controller/ResetServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../practice08/src/main/java/org/snack/controller/VoteFormServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../practice08/src/main/java/org/snack/controller/VoteSubmitServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../practice08/src/main/webapp/vote_form.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../practice08/src/main/webapp/vote_result.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../takoyaki/src/main/java/org/scoula/takoyaki/FrontControllerServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../takoyaki/src/main/java/org/scoula/takoyaki/command/Command.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../takoyaki/src/main/java/org/scoula/takoyaki/controller/HomeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../takoyaki/src/main/java/org/scoula/takoyaki/controller/MenuController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../takoyaki/src/main/java/org/scoula/takoyaki/dispatcher/DispatcherServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../takoyaki/src/main/java/org/scoula/takoyaki/model/Menu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../takoyaki/src/main/java/org/scoula/takoyaki/model/Order.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../takoyaki/src/main/webapp/WEB-INF/views/menu/add.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../takoyaki/src/main/webapp/WEB-INF/views/menu/list.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../takoyaki/src/main/webapp/WEB-INF/views/order/new.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../takoyaki/src/main/webapp/WEB-INF/views/welcome.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../07_Spring_Context/ex01/src/main/java/org/scoula/app/Main2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../07_Spring_Context/ex01/src/main/java/org/scoula/config/ProjectConfig2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../07_Spring_Context/ex02/src/main/java/org/scoula/beans/Parrot.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../07_Spring_Context/ex02/src/main/java/org/scoula/beans/Parrot2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../07_Spring_Context/ex02/src/main/java/org/scoula/beans/Person.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../07_Spring_Context/ex02/src/main/java/org/scoula/beans/Person2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../07_Spring_Context/ex02/src/main/java/org/scoula/config/ProjectConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../07_Spring_Context/ex02/src/main/java/org/scoula/config/ProjectConfig2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../07_Spring_Context/ex02/src/main/java/org/scoula/main/Main2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../07_Spring_Context/practice01/src/main/java/org/scoula/app/Main1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../07_Spring_Context/practice01/src/main/java/org/scoula/config/ProjectConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../07_Spring_Context/practice01/src/main/java/org/scoula/domain/Dog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../08_Spring/ex01/src/main/java/org/scoula/config/RootConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../08_Spring/ex01/src/main/java/org/scoula/config/ServletConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../08_Spring/ex01/src/main/java/org/scoula/config/WebConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../08_Spring/ex01/src/main/java/org/scoula/controller/HomeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../08_Spring/ex01/src/main/resources/log4j2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../08_Spring/ex01/src/main/webapp/WEB-INF/views/index.jsp" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;wherewhale&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/wherewhale/-KB-IT-s-Your-Life-6-.git&quot;,
+    &quot;accountId&quot;: &quot;6e3df7a0-c67e-4dd0-bd3f-ac8cb6cff61a&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="2yFRVsbrjVIOzt2VPRU2BySggUc" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.ex01 [:org.scoula.app.Main.main()].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "develop",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.grazie",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.26053.27" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.26053.27" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="258bc4f4-cb86-44bc-b24e-edbefb4fe40b" name="Changes" comment="" />
+      <created>1749428362659</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1749428362659</updated>
+      <workItem from="1749428363954" duration="3346000" />
+      <workItem from="1749446480074" duration="85000" />
+      <workItem from="1749449135317" duration="7000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
